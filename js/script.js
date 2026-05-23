@@ -206,6 +206,16 @@ function initLazyLoad() {
   lazyImages.forEach((img) => observer.observe(img));
 }
 
+function initImageFallbacks() {
+  document.querySelectorAll('img').forEach((img) => {
+    img.addEventListener('error', function () {
+      if (this.src && this.src.includes('assets/fallback.jpg')) return;
+      this.onerror = null;
+      this.src = 'assets/fallback.jpg';
+    });
+  });
+}
+
 function initSmoothLinks() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
@@ -227,6 +237,7 @@ function initPage() {
   initContactForm();
   initReviewCarousel();
   initLazyLoad();
+  initImageFallbacks();
   initSmoothLinks();
 
   window.addEventListener('scroll', handleNavScroll);
