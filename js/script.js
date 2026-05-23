@@ -108,7 +108,7 @@ function initFilterButtons() {
 }
 
 function initLightbox() {
-  const galleryImages = document.querySelectorAll('.gallery-item img, .image-card img, .room-card img, .amenity-card img');
+  const galleryImages = document.querySelectorAll('.gallery-item img, .image-card img, .room-card img, .amenity-card img, .gallery-image');
   galleryImages.forEach((img) => {
     img.addEventListener('click', () => {
       if (!lightbox || !lightboxImg) return;

@@ -204,6 +204,7 @@ a {
   justify-content: center;
   overflow: hidden;
   color: var(--white);
+  background-color: #070605;
 }
 
 .hero-full {
